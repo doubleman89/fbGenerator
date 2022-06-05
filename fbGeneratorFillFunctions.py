@@ -55,15 +55,12 @@ def fillNetworkFunction (workbook,functionName, dataName, unitName, tagname, par
     dataSheet = workbook[dataName] 
 
 
-
     with open(newFileName,'a') as new_file:
 
         new_file.write("\n")
-
+        
         for row in functionSheet.values:
-            
-            #get a tagname when there is a new title 
-               
+                         
 
             for value in row:
 
@@ -98,8 +95,57 @@ def fillNetworkFunction (workbook,functionName, dataName, unitName, tagname, par
         new_file.write("\n") 
             
 
-                      
-            
+def fillNetworkFunction2 (workbook,dic, dataName, unitName, newFileName ):
 
+    with open(newFileName,'a') as new_file:
+        #begin all networks
+        new_file.write("\n")
+        new_file.write("BEGIN\n")
+
+        for key in dic.keys():
+
+            #begin specific network
+            new_file.write("NETWORK\n")
+
+            [functionName ,par] = dic[key]
+
+            functionSheet = workbook[functionName]                      
+            dataSheet = workbook[dataName] 
+
+            for row in functionSheet.values:
+                            
+
+                for value in row:
+
+                    newLine = value
+                    for column in range (1,dataSheet.max_column+1):
+                        
+                        match column:
+
+                            case 1: 
+                                checkedWord = "&Unit&"
+                                replacedWord = str(unitName)
+                            
+                            case 2: 
+                                checkedWord = "&tagname&"
+                                replacedWord = str(key)
+
+                            case num if num in range(4,99): 
+                                checkedWord = "&par"+str(column-3)+"&" 
+                                replacedWord = str(par[column-4])
+                                        
+                        
+
+                        if  re.search(f"()?{checkedWord}()?", value):
+                            
+                            newLine = value.replace(checkedWord,replacedWord)
+                            
+
+                #copy other lines 
+                new_file.write(newLine)
+                new_file.write("\n")
+
+            new_file.write("\n")                       
+            
 
 

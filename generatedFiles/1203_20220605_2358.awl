@@ -1,0 +1,159 @@
+FUNCTION BLOCK "1203_PID"
+TITLE : Test Title
+AUTHOR : PD
+VERSION : 0.1
+
+VAR
+FT_120307  : "_AI";
+FT_120306  : "_AI";
+END_VAR
+
+BEGIN
+NETWORK
+      CALL  #FT_120307 (
+NETWORK
+       COM_RST :=1203
+NETWORK
+       MAN_ON  :=WF_LIM_STAT_DB5
+NETWORK
+       PVPER_ON:=
+NETWORK
+       P_SEL   :=WF2_LIM_STAT_DB5
+NETWORK
+       I_SEL   :=
+NETWORK
+       INT_HOLD:=
+NETWORK
+       I_ITL_ON:=
+NETWORK
+       D_SEL   :=
+NETWORK
+       CYCLE   :=
+NETWORK
+       SP_INT  :=
+NETWORK
+       PV_IN   :=
+NETWORK
+       PV_PER  :=FT_120307.lim_alm
+NETWORK
+       MAN     :=
+NETWORK
+       GAIN    :=
+NETWORK
+       TI      :=
+NETWORK
+       TD      :=
+NETWORK
+       TM_LAG  :=
+NETWORK
+       DEADB_W :=
+NETWORK
+       LMN_HLM :=
+NETWORK
+       LMN_LLM :=
+NETWORK
+       PV_FAC  :=
+NETWORK
+       PV_OFF  :=
+NETWORK
+       LMN_FAC :=
+NETWORK
+       LMN_OFF :=
+NETWORK
+       I_ITLVAL:=
+NETWORK
+       DISV    :=
+NETWORK
+       LMN     :=#Out
+NETWORK
+       LMN_PER :=
+NETWORK
+       QLMN_HLM:=
+NETWORK
+       QLMN_LLM:=
+NETWORK
+       LMN_P   :=
+NETWORK
+       LMN_I   :=
+NETWORK
+       LMN_D   :=
+NETWORK
+       PV      :=
+NETWORK
+       ER      := );
+
+
+BEGIN
+NETWORK
+      CALL  #FT_120306 (
+NETWORK
+       COM_RST :=1203
+NETWORK
+       MAN_ON  :=WF_LIM_STAT_DB6
+NETWORK
+       PVPER_ON:=
+NETWORK
+       P_SEL   :=WF2_LIM_STAT_DB6
+NETWORK
+       I_SEL   :=
+NETWORK
+       INT_HOLD:=
+NETWORK
+       I_ITL_ON:=
+NETWORK
+       D_SEL   :=
+NETWORK
+       CYCLE   :=
+NETWORK
+       SP_INT  :=
+NETWORK
+       PV_IN   :=
+NETWORK
+       PV_PER  :=FT_120306.lim_alm
+NETWORK
+       MAN     :=
+NETWORK
+       GAIN    :=
+NETWORK
+       TI      :=
+NETWORK
+       TD      :=
+NETWORK
+       TM_LAG  :=
+NETWORK
+       DEADB_W :=
+NETWORK
+       LMN_HLM :=
+NETWORK
+       LMN_LLM :=
+NETWORK
+       PV_FAC  :=
+NETWORK
+       PV_OFF  :=
+NETWORK
+       LMN_FAC :=
+NETWORK
+       LMN_OFF :=
+NETWORK
+       I_ITLVAL:=
+NETWORK
+       DISV    :=
+NETWORK
+       LMN     :=#Out
+NETWORK
+       LMN_PER :=
+NETWORK
+       QLMN_HLM:=
+NETWORK
+       QLMN_LLM:=
+NETWORK
+       LMN_P   :=
+NETWORK
+       LMN_I   :=
+NETWORK
+       LMN_D   :=
+NETWORK
+       PV      :=
+NETWORK
+       ER      := );
+

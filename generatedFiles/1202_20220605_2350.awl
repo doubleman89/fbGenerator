@@ -1,0 +1,85 @@
+FUNCTION BLOCK "1202_PID"
+TITLE : Test Title
+AUTHOR : PD
+VERSION : 0.1
+
+VAR
+FT_120204  : "_AI";
+FT_120202  : "_AI";
+END_VAR
+
+      CALL  #FT_120204 (
+       COM_RST :=1202
+       MAN_ON  :=WF_LIM_STAT_DB3
+       PVPER_ON:=
+       P_SEL   :=WF2_LIM_STAT_DB3
+       I_SEL   :=
+       INT_HOLD:=
+       I_ITL_ON:=
+       D_SEL   :=
+       CYCLE   :=
+       SP_INT  :=
+       PV_IN   :=
+       PV_PER  :=FT_120204.lim_alm
+       MAN     :=
+       GAIN    :=
+       TI      :=
+       TD      :=
+       TM_LAG  :=
+       DEADB_W :=
+       LMN_HLM :=
+       LMN_LLM :=
+       PV_FAC  :=
+       PV_OFF  :=
+       LMN_FAC :=
+       LMN_OFF :=
+       I_ITLVAL:=
+       DISV    :=
+       LMN     :=#Out
+       LMN_PER :=
+       QLMN_HLM:=
+       QLMN_LLM:=
+       LMN_P   :=
+       LMN_I   :=
+       LMN_D   :=
+       PV      :=
+       ER      := );
+
+
+      CALL  #FT_120202 (
+       COM_RST :=1202
+       MAN_ON  :=WF_LIM_STAT_DB7
+       PVPER_ON:=
+       P_SEL   :=WF2_LIM_STAT_DB7
+       I_SEL   :=
+       INT_HOLD:=
+       I_ITL_ON:=
+       D_SEL   :=
+       CYCLE   :=
+       SP_INT  :=
+       PV_IN   :=
+       PV_PER  :=FT_120202.lim_alm
+       MAN     :=
+       GAIN    :=
+       TI      :=
+       TD      :=
+       TM_LAG  :=
+       DEADB_W :=
+       LMN_HLM :=
+       LMN_LLM :=
+       PV_FAC  :=
+       PV_OFF  :=
+       LMN_FAC :=
+       LMN_OFF :=
+       I_ITLVAL:=
+       DISV    :=
+       LMN     :=#Out
+       LMN_PER :=
+       QLMN_HLM:=
+       QLMN_LLM:=
+       LMN_P   :=
+       LMN_I   :=
+       LMN_D   :=
+       PV      :=
+       ER      := );
+

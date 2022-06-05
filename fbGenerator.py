@@ -2,7 +2,7 @@
 from datetime import datetime
 from openpyxl import load_workbook
 from sys import argv
-from fbGeneratorFillFunctions import fillNetworkFunction, fillTitleFunction, fillStatFunction
+from fbGeneratorFillFunctions import fillNetworkFunction, fillTitleFunction, fillStatFunction, fillNetworkFunction2
 from excelFunctions import convertExcelColumn
 
 # declare constants 
@@ -29,7 +29,7 @@ for unit in unitSet:
 
     # create new file
     now = datetime.now()
-    newFileName =  str(unit) + now.strftime("_%Y%m%d_%H%M") + ".awl"
+    newFileName = ".\generatedFiles\\" + str(unit) + now.strftime("_%Y%m%d_%H%M") + ".awl"
     open(newFileName,"w").close()
 
     #get data to generate STAT 
@@ -62,13 +62,13 @@ for unit in unitSet:
     fillStatFunction (dic, newFileName )
 
     # generate networks 
+    fillNetworkFunction2(wb,dic, "data", unit, newFileName)
+    
+    #for key in dic.keys():
 
-    for key in dic.keys():
+        #[fb ,par] = dic[key]
 
-        [fb ,par] = dic[key]
-
-        fillNetworkFunction(wb,fb, "data",unit, key, par,newFileName)
-       
+        #fillNetworkFunction(wb,fb, "data",unit, key, par,newFileName)    
 
 
             
